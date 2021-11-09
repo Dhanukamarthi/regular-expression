@@ -3,28 +3,25 @@
     <head>
         <meta charset="UTF-8">
         <title>form in html</title>
-        <style>
-            #styling{
-                background-color: gold;
-                width: 500px;
-                padding: 25px;
-                margin-left: auto;
-                margin-right: auto;
+        <script type="text/javascript">
+            function validdate(){
+                var username=document.getElementById("name").value;
+                var regex = /E00/;
+                if(regex.test(username)){
+                    alert("valid username")
+                }else{
+                    alert("invalid username");
+                    document.getElementById("blu").style.visibility="visible";
+                }
             }
-        </style>
-    </head>
-    <body>
-        <h1 style="text-align:center;"><span style="color: hotpink;">SIGN IN</span></h1>
-        <form id="styling">
-        <div>
-            <h1>username:</h1>
-        <h1 id = "class"  >
-            <input type="text" name ="username">
-            <label id="ben" style="color: black; visibility: hidden;">invalid username</label>
-        </h1>
-        <button>submit</button>
-        <script src="index.js"></script>
-    </div>
-    </form>
-    </body>
-    </html>
+        </script>
+        </head>
+        <body>
+            <form action="message">
+                <input id="name" placeholder="username" type="text"/><br>
+                <label id="blu" style="color: brown;visibility: hidden;">invalid username</label>
+                <br>
+                <button onclick="validdate()" type="button">submit</button>
+            </form>
+        </body>
+</html>
